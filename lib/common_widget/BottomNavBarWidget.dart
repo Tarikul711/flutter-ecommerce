@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/main.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
   @override
@@ -8,11 +11,13 @@ class BottomNavBarWidget extends StatefulWidget {
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
+    int _selectedIndex = 1;
     void _onItemTapped(int index) {
       setState(() {
         _selectedIndex = index;
+        log("tarikul ${index}");
       });
+//      _navigateToScreens(index);
     }
 
     return BottomNavigationBar(
@@ -52,4 +57,6 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
       onTap: _onItemTapped,
     );
   }
+
+
 }
