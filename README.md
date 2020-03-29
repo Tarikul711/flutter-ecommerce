@@ -1,6 +1,18 @@
 # flutter_ecommerce_app
 
-A new Flutter application.
+A small attempt to make an e-commerce user interface in Flutter for Android and iOS.
+
+## ScreenShots
+### Home Page
+<img src="screens/main_screen.jpg" height="500em" />
+
+### Other Screens
+<img src="screens/detail_page_screen.jpg" height="500em" />
+
+### Login & Registration Screen
+<img src="screens/login_screen.jpg" height="500em" />&nbsp;<img src="screens/signin_screen.jpg" height="500em" />
+### Wish list and Empty cart screen
+<img src="screens/wishlist_screen.jpg" height="500em" />&nbsp;<img src="screens/empty_cart_screen.jpg" height="500em" />
 
 ## Getting Started
 

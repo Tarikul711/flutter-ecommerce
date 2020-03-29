@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+int currentIndex = 0;
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageNewState extends State<MyHomePage> {
-  int currentIndex = 1;
+
   final List<Widget> viewContainer = [
     HomeScreen(),
     WishListScreen(),
