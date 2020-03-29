@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/common_widget/CircularProgress.dart';
 import 'package:flutter_ecommerce_app/common_widget/GridTilesCategory.dart';
 import 'package:flutter_ecommerce_app/shop/ShopModel.dart';
 import 'package:flutter_ecommerce_app/utils/Urls.dart';
@@ -27,7 +28,7 @@ class _ShopHomePageState extends State<ShopHomePage> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-            return Text('loading...');
+            return CircularProgress();
           default:
             if (snapshot.hasError)
               return Text('Error: ${snapshot.error}');

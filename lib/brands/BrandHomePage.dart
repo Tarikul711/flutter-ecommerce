@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/brans/BrandModel.dart';
+import 'package:flutter_ecommerce_app/common_widget/CircularProgress.dart';
 import 'package:flutter_ecommerce_app/common_widget/GridTilesCategory.dart';
 import 'package:flutter_ecommerce_app/utils/Urls.dart';
 import 'package:http/http.dart';
+
+import 'BrandModel.dart';
 
 BrandModel brandModel;
 
@@ -30,7 +32,7 @@ class _BrandHomePageState extends State<BrandHomePage> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-            return Text('loading...');
+            return CircularProgress();
           default:
             if (snapshot.hasError)
               return Text('Error: ${snapshot.error}');

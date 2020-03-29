@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/common_widget/BottomNavBarWidget.dart';
+import 'package:flutter_ecommerce_app/common_widget/DrawerWidget.dart';
 import 'package:flutter_ecommerce_app/screens/HomeScreen.dart';
 import 'package:flutter_ecommerce_app/screens/ShoppingCartScreen.dart';
 import 'package:flutter_ecommerce_app/screens/WishListScreen.dart';
@@ -21,7 +22,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 int currentIndex = 0;
+
+void navigateToScreens(int index) {
+  currentIndex=index;
+}
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -29,7 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageNewState extends State<MyHomePage> {
-
   final List<Widget> viewContainer = [
     HomeScreen(),
     WishListScreen(),
@@ -63,8 +68,11 @@ class _MyHomePageNewState extends State<MyHomePage> {
             ),
           ],
         ),
-        drawer: Drawer(),
-        body: viewContainer[currentIndex],
+        drawer: DrawerWidget(),
+        body: IndexedStack(
+          index: currentIndex,
+          children: viewContainer,
+        ),
         bottomNavigationBar: BottomNavBarWidget(),
       ),
     );

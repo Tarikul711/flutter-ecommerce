@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/brans/BrandHomePage.dart';
+import 'package:flutter_ecommerce_app/brands/BrandHomePage.dart';
 import 'package:flutter_ecommerce_app/category/CategorySlider.dart';
 import 'package:flutter_ecommerce_app/common_widget/PopularMenu.dart';
 import 'package:flutter_ecommerce_app/common_widget/SearchWidget.dart';

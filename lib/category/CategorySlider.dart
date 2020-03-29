@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/category/CategoryModel.dart';
+import 'package:flutter_ecommerce_app/common_widget/CircularProgress.dart';
 import 'package:flutter_ecommerce_app/common_widget/GridTilesCategory.dart';
 import 'package:flutter_ecommerce_app/utils/Urls.dart';
 import 'package:http/http.dart';
@@ -11,8 +11,7 @@ List<CategoryModel> categories;
 class CategoryPage extends StatefulWidget {
   String slug;
   bool isSubList;
-
-  CategoryPage({Key key, this.slug, this.isSubList=false}) : super(key: key);
+  CategoryPage({Key key, this.slug, this.isSubList = false}) : super(key: key);
 
   @override
   _CategoryPageState createState() => _CategoryPageState();
@@ -32,7 +31,7 @@ class _CategoryPageState extends State<CategoryPage> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-            return Text('loading...');
+            return CircularProgress();
           default:
             if (snapshot.hasError)
               return Text('Error: ${snapshot.error}');
