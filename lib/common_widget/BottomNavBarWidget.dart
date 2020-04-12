@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/main.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
   @override
@@ -29,21 +30,21 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           ),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite_border),
+          icon: Icon(FontAwesomeIcons.heart),
           title: Text(
             'Wish List',
             style: TextStyle(color: Color(0xFF545454)),
           ),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
+          icon: Icon(FontAwesomeIcons.shoppingBag),
           title: Text(
             'Cart',
             style: TextStyle(color: Color(0xFF545454)),
           ),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.dashboard),
+          icon: Icon(FontAwesomeIcons.dashcube),
           title: Text(
             'Dashboard',
             style: TextStyle(color: Color(0xFF545454)),

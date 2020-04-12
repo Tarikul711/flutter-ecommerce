@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/main.dart';
 import 'package:flutter_ecommerce_app/screens/WishListScreen.dart';
 import 'package:flutter_ecommerce_app/sign_in_up/SignIn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DrawerWidget extends StatefulWidget {
   @override
@@ -18,10 +19,35 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             _createDrawerHeader(),
-            _createDrawerItem(icon: Icons.home, text: 'Home',onTap: ()=> Navigator.push(context,MaterialPageRoute(builder: (context) => MyHomePage()),)),
-            _createDrawerItem(icon: Icons.account_box, text: 'Sign In',onTap: ()=> Navigator.push(context,MaterialPageRoute(builder: (context) => AppSignIn()),)),
-            _createDrawerItem(icon: Icons.favorite_border, text: 'Wish List',onTap: ()=> Navigator.push(context,MaterialPageRoute(builder: (context) => WishListScreen()),)),
-            _createDrawerItem(icon: Icons.call, text: 'Contact Us',onTap: ()=> Navigator.push(context,MaterialPageRoute(builder: (context) => EmptyWishListScreen()),)),
+            _createDrawerItem(
+                icon: Icons.home,
+                text: 'Home',
+                onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    )),
+            _createDrawerItem(
+                icon: FontAwesomeIcons.user,
+                text: 'Sign In',
+                onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AppSignIn()),
+                    )),
+            _createDrawerItem(
+                icon: Icons.favorite_border,
+                text: 'Wish List',
+                onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WishListScreen()),
+                    )),
+            _createDrawerItem(
+                icon: Icons.call,
+                text: 'Contact Us',
+                onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EmptyWishListScreen()),
+                    )),
           ],
         ),
       ),
@@ -47,7 +73,7 @@ Widget _createDrawerHeader() {
         Positioned(
             bottom: 12.0,
             left: 16.0,
-            child: Text("Developed for learing",
+            child: Text("Developed for learing purpose by 'TARIKUL'",
                 style: TextStyle(
                     color: Color(0xFF545454),
                     fontSize: 10.0,
@@ -76,4 +102,3 @@ Widget _createDrawerItem(
     onTap: onTap,
   );
 }
-

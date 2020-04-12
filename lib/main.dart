@@ -6,6 +6,7 @@ import 'package:flutter_ecommerce_app/screens/HomeScreen.dart';
 import 'package:flutter_ecommerce_app/screens/ShoppingCartScreen.dart';
 import 'package:flutter_ecommerce_app/screens/WishListScreen.dart';
 import 'package:flutter_ecommerce_app/sign_in_up/SignIn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
 int currentIndex = 0;
 
 void navigateToScreens(int index) {
-  currentIndex=index;
+  currentIndex = index;
 }
 
 class MyHomePage extends StatefulWidget {
@@ -63,7 +64,7 @@ class _MyHomePageNewState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => AppSignIn()),
                 );
               },
-              icon: Icon(Icons.account_circle),
+              icon: Icon(FontAwesomeIcons.user),
               color: Color(0xFF323232),
             ),
           ],

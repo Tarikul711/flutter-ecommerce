@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PopularMenu extends StatelessWidget {
   double width, height = 55.0;
@@ -49,7 +50,7 @@ class PopularMenu extends StatelessWidget {
                   onPressed: () {},
                   shape: CircleBorder(),
                   child: Icon(
-                    Icons.alarm,
+                    FontAwesomeIcons.clock,
                     color: Color(0xFFC1A17C),
                   ),
                 ),
@@ -74,7 +75,7 @@ class PopularMenu extends StatelessWidget {
                   onPressed: () {},
                   shape: CircleBorder(),
                   child: Icon(
-                    Icons.airport_shuttle,
+                    FontAwesomeIcons.truck,
                     color: Color(0xFF5EB699),
                   ),
                 ),
@@ -99,7 +100,7 @@ class PopularMenu extends StatelessWidget {
                   onPressed: () {},
                   shape: CircleBorder(),
                   child: Icon(
-                    Icons.cake,
+                    FontAwesomeIcons.gift,
                     color: Color(0xFF4D9DA7),
                   ),
                 ),
