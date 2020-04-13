@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/brands/BrandHomePage.dart';
-import 'package:flutter_ecommerce_app/category/CategorySlider.dart';
+import 'package:flutter_ecommerce_app/common_widget/AppBarWidget.dart';
+import 'package:flutter_ecommerce_app/components/BrandHomePage.dart';
+import 'package:flutter_ecommerce_app/components/CategorySlider.dart';
 import 'package:flutter_ecommerce_app/common_widget/BottomNavBarWidget.dart';
 import 'package:flutter_ecommerce_app/common_widget/SearchWidget.dart';
-import 'package:flutter_ecommerce_app/shop/ShopHomePage.dart';
+import 'package:flutter_ecommerce_app/components/ShopHomePage.dart';
 
-class SubCategoryPage extends StatelessWidget {
+class SubCategoryScreen extends StatelessWidget {
   String slug;
 
-  SubCategoryPage({Key key, @required this.slug}) : super(key: key);
+  SubCategoryScreen({Key key, @required this.slug}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          elevation: 0.0,
-          centerTitle: true,
-          leading: new IconButton(
-            icon: new Icon(Icons.arrow_back, color: Color(0xFF323232)),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: Image.asset(
-            "assets/images/ic_app_icon.png",
-            width: 80,
-            height: 40,
-          ),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.notifications_none),
-              color: Color(0xFF323232),
-            ),
-          ],
-        ),
+        appBar: appBarWidget(context),
         body: SafeArea(
           child: Column(
             children: <Widget>[

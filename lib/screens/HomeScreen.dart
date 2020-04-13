@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/brands/BrandHomePage.dart';
-import 'package:flutter_ecommerce_app/category/CategorySlider.dart';
+import 'package:flutter_ecommerce_app/components/BrandHomePage.dart';
+import 'package:flutter_ecommerce_app/components/CategorySlider.dart';
 import 'package:flutter_ecommerce_app/common_widget/PopularMenu.dart';
 import 'package:flutter_ecommerce_app/common_widget/SearchWidget.dart';
 import 'package:flutter_ecommerce_app/common_widget/TopPromoSlider.dart';
-import 'package:flutter_ecommerce_app/shop/ShopHomePage.dart';
+import 'package:flutter_ecommerce_app/components/ShopHomePage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

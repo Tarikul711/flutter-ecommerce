@@ -1,27 +1,44 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/category/SubCategoryPage.dart';
+import 'package:flutter_ecommerce_app/screens/ProductsScreen.dart';
+import 'package:flutter_ecommerce_app/screens/SubCategoryScreen.dart';
 
 class GridTilesCategory extends StatelessWidget {
   String name;
   String imageUrl;
   String slug;
+  bool fromSubProducts = false;
 
   GridTilesCategory(
       {Key key,
       @required this.name,
       @required this.imageUrl,
-      @required this.slug})
+      @required this.slug,
+      this.fromSubProducts})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SubCategoryPage(slug: slug,)),
-        );
+        if (fromSubProducts) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ProductsScreen(
+                      slug: "products/?page=1&limit=12&category=" + slug,
+                      name: name,
+                    )),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SubCategoryScreen(
+                      slug: slug,
+                    )),
+          );
+        }
       },
       child: Card(
           color: Colors.white,

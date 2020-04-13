@@ -1,28 +1,25 @@
 import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/category/CategoryModel.dart';
 import 'package:flutter_ecommerce_app/common_widget/CircularProgress.dart';
 import 'package:flutter_ecommerce_app/common_widget/GridTilesCategory.dart';
+import 'package:flutter_ecommerce_app/models/ShopModel.dart';
 import 'package:flutter_ecommerce_app/utils/Urls.dart';
 import 'package:http/http.dart';
 
-List<CategoryModel> categories;
+ShopModel shopModel;
 
-class CategoryPage extends StatefulWidget {
+class ShopHomePage extends StatefulWidget {
   String slug;
   bool isSubList;
-  CategoryPage({Key key, this.slug, this.isSubList = false}) : super(key: key);
 
+  ShopHomePage({Key key, this.slug, this.isSubList=false}) : super(key: key);
   @override
-  _CategoryPageState createState() => _CategoryPageState();
+  _ShopHomePageState createState() => _ShopHomePageState();
 }
 
-class _CategoryPageState extends State<CategoryPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _ShopHomePageState extends State<ShopHomePage> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -44,42 +41,38 @@ class _CategoryPageState extends State<CategoryPage> {
 }
 
 Widget createListView(BuildContext context, AsyncSnapshot snapshot) {
-  List<CategoryModel> values = snapshot.data;
+  ShopModel values = snapshot.data;
+  List<Data> results = values.data;
   return GridView.count(
     crossAxisCount: 3,
-//    physics: NeverScrollableScrollPhysics(),
     padding: EdgeInsets.all(1.0),
     childAspectRatio: 8.0 / 9.0,
-    children: List<Widget>.generate(values.length, (index) {
+    children: List<Widget>.generate(results.length, (index) {
       return GridTile(
           child: GridTilesCategory(
-              name: values[index].name,
-              imageUrl: values[index].imageUrl,
-              slug: values[index].slug));
+              name: results[index].shopName,
+              imageUrl: results[index].shopImage,slug:results[index].slug));
     }),
   );
 }
 
-Future<List<CategoryModel>> getCategoryList(String slug, bool isSubList) async {
+Future<ShopModel> getCategoryList(String slug, bool isSubList) async {
   if (isSubList) {
-    categories = null;
+    shopModel = null;
   }
-  if (categories == null) {
-    Response response;
-    response = await get(Urls.ROOT_URL + slug);
+  if (shopModel == null) {
+    Response response =
+        await get(Urls.ROOT_URL + slug);
     int statusCode = response.statusCode;
-    final body = json.decode(response.body);
+    var body = json.decode(response.body);
+    log('${body}');
     if (statusCode == 200) {
-      categories =
-          (body as List).map((i) => CategoryModel.fromJson(i)).toList();
-
-      return categories;
-    } else {
-      return categories = List();
+      shopModel = ShopModel.fromJson(body);
+//    brandModel = (body).map((i) =>BrandModel.fromJson(body)) ;
+      return shopModel;
     }
   } else {
-    return categories;
+    return shopModel;
   }
 }
-
-// https://api.evaly.com.bd/core/public/categories/?parent=bags-luggage-966bc8aac     sub cate by slug
+//https://api.evaly.com.bd/core/public/category/shops/bags-luggage-966bc8aac/?page=1&limit=15

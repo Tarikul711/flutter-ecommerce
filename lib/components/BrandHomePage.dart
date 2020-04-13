@@ -6,7 +6,7 @@ import 'package:flutter_ecommerce_app/common_widget/GridTilesCategory.dart';
 import 'package:flutter_ecommerce_app/utils/Urls.dart';
 import 'package:http/http.dart';
 
-import 'BrandModel.dart';
+import '../models/BrandModel.dart';
 
 BrandModel brandModel;
 

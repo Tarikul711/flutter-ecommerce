@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/main.dart';
 import 'package:flutter_ecommerce_app/screens/WishListScreen.dart';
-import 'package:flutter_ecommerce_app/sign_in_up/SignIn.dart';
+import 'package:flutter_ecommerce_app/components/AppSignIn.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DrawerWidget extends StatefulWidget {

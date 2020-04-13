@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_ecommerce_app/sign_in_up/SignUp.dart';
+import 'package:flutter_ecommerce_app/components/AppSingUp.dart';
 
 class AppSignIn extends StatefulWidget {
   @override

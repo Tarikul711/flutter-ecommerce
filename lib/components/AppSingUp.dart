@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/sign_in_up/SignIn.dart';
+import 'package:flutter_ecommerce_app/components/AppSignIn.dart';
 
 class AppSingUp extends StatelessWidget {
   @override
