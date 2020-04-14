@@ -22,6 +22,7 @@ class GridTilesCategory extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (fromSubProducts) {
+          print(slug);
           Navigator.push(
             context,
             MaterialPageRoute(

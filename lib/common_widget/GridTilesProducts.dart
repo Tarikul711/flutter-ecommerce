@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/screens/ProductDetailScreen.dart';
 import 'package:flutter_ecommerce_app/screens/ProductsScreen.dart';
 import 'package:flutter_ecommerce_app/screens/SubCategoryScreen.dart';
 
@@ -41,6 +42,13 @@ class GridTilesProducts extends StatelessWidget {
                     )),
           );
         }*/
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ProductDetailScreen(
+                    slug: "products/" + slug + "/",
+                  )),
+        );
       },
       child: Container(
         padding: EdgeInsets.only(top: 5),

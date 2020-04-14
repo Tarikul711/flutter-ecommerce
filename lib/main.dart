@@ -4,6 +4,7 @@ import 'package:flutter_ecommerce_app/common_widget/AppBarWidget.dart';
 import 'package:flutter_ecommerce_app/common_widget/BottomNavBarWidget.dart';
 import 'package:flutter_ecommerce_app/common_widget/DrawerWidget.dart';
 import 'package:flutter_ecommerce_app/screens/HomeScreen.dart';
+import 'package:flutter_ecommerce_app/screens/ProductDetailScreen.dart';
 import 'package:flutter_ecommerce_app/screens/ShoppingCartScreen.dart';
 import 'package:flutter_ecommerce_app/screens/WishListScreen.dart';
 import 'package:flutter_ecommerce_app/components/AppSignIn.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: MyHomePage(),
       theme: ThemeData(
+          fontFamily: 'Roboto',
           primaryColor: Colors.white,
           primaryColorDark: Colors.white,
           backgroundColor: Colors.white),
