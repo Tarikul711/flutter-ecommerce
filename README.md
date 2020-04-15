@@ -1,4 +1,4 @@
-# flutter_ecommerce_app
+# Flutter ecommerce App 
 
 A small attempt to make an e-commerce user interface in Flutter for Android and iOS. I developed this application just for learning purpose. I am beginner in flutter so if you found any error solve it. 
 
