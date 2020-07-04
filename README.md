@@ -4,7 +4,7 @@ A small attempt to make an e-commerce user interface in Flutter for Android and 
 ### App design screen
 <img src="screens/app_screenshot.png" />
 
-## ScreenShots
+## ScreenShots 
 ### Home Page & Category Screen
 <img src="screens/main_screen.jpg" height="500em" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="screens/detail_page_screen.jpg" height="500em" />
 
