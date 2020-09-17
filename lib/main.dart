@@ -27,13 +27,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-int currentIndex = 0;
-
-void navigateToScreens(int index) {
-  currentIndex = index;
-}
+void navigateToScreens(int index) {}
 
 class MyHomePage extends StatefulWidget {
+  static int currentPage = 0;
   @override
   _MyHomePageNewState createState() => _MyHomePageNewState();
 }
@@ -46,6 +43,13 @@ class _MyHomePageNewState extends State<MyHomePage> {
     HomeScreen()
   ];
 
+  void navigateToScreens(int index) {
+    setState(() {
+      MyHomePage.currentPage = index;
+      print("--->" + MyHomePage.currentPage.toString());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -54,10 +58,10 @@ class _MyHomePageNewState extends State<MyHomePage> {
         appBar: appBarWidget(context),
         drawer: DrawerWidget(),
         body: IndexedStack(
-          index: currentIndex,
+          index: MyHomePage.currentPage,
           children: viewContainer,
         ),
-        bottomNavigationBar: BottomNavBarWidget(),
+        bottomNavigationBar: BottomNavBarWidget.fromHome(navigateToScreens),
       ),
     );
   }

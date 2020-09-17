@@ -3,22 +3,28 @@ import 'package:flutter_ecommerce_app/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
+  static Function navigate;
+
+  BottomNavBarWidget() {}
+
+  BottomNavBarWidget.fromHome(Function fn) {
+    navigate = fn;
+  }
   @override
   _BottomNavBarWidgetState createState() => _BottomNavBarWidgetState();
 }
 
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      BottomNavBarWidget.navigate(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
-    void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-        navigateToScreens(index);
-      });
-
-    }
-
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
